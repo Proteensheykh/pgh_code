@@ -6,8 +6,7 @@ def circular_shift(items:list, shift:int) -> list:
     for i in range(0, shift):
         last = items[-1] # store the last element of the list
 
-        for j in range(len(items)-1, -1, -1):
-            items[j] = items[j-1] # shift elements in the list one step to the right
+        items[1:] = items[:-1] # shift elements in the list one step to the right
 
         items[0] = last     # replace the last element in the beginning   
 
